@@ -13,7 +13,7 @@ namespace KurumsalWeb.Models.Model
     {
         [Key]
         public int KimlikId { get; set; }
-        [DisplayName("Site Baslik")]
+        [DisplayName("Site Baslik ")]
         [Required, StringLength(100,ErrorMessage ="En az 100 karakter girmelisiniz.")]
         public string Title { get; set; }
         [DisplayName("Anahtar Kelimeler")]
