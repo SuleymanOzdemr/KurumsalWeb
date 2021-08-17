@@ -694,9 +694,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataContext\KurumsalDBContext.cs" />
     <Compile Include="Models\Model\Admin.cs" />
     <Compile Include="Models\Model\Blog.cs" />
     <Compile Include="Models\Model\Hakkimizda.cs" />
@@ -715,6 +718,8 @@
     <Content Include="Scripts\jquery-3.4.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.0.min.map" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Kimlik\Index.cshtml" />
+    <Content Include="Views\Kimlik\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -724,7 +729,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\DataContext\" />
+    <Folder Include="Uploads\Kimlik\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KurumsalWeb.Models.Kategori>
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Kategori>
 @{
     
     ViewBag.Title = "Admin Ana Sayfa";
@@ -14,7 +14,7 @@
                 <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
                 @foreach (var item in Model)
                 {
-                    <li>@item.KategoriAd</li>
+                    <li>@item.KategoriAd - @item.Aciklama</li>
                 }
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
