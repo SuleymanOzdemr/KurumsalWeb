@@ -1096,6 +1096,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1123,6 +1124,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Kimlik\Index.cshtml" />
     <Content Include="Views\Kimlik\Edit.cshtml" />
+    <Content Include="Views\Hakkimizda\Index.cshtml" />
+    <Content Include="Views\Hakkimizda\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

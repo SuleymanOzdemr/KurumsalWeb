@@ -16,6 +16,7 @@ namespace KurumsalWeb.Controllers
         // GET: Kimlik
         public ActionResult Index()
         {
+
             return View(db.Kimlik.ToList());
         }
 
@@ -30,7 +31,7 @@ namespace KurumsalWeb.Controllers
 
         // POST: Kimlik/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken] /*guvenlik amaciyla*/
+        [ValidateAntiForgeryToken] /*veriler icin guvenlik amaciyla*/
         [ValidateInput(false)]
         public ActionResult Edit(int id, Kimlik kimlik, HttpPostedFileBase LogoURL)
         {
