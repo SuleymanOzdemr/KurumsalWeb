@@ -20,8 +20,9 @@ namespace KurumsalWeb.Models.DataContext
         public DbSet<Iletisim> Iletisim { get; set; }
         public DbSet<Kategori> Kategori { get; set; }
         public DbSet<Kimlik> Kimlik { get; set; }
+        public object Yorum { get; internal set; }
         /*
-         burada veri tabanını set ediyoruz
-         */
+burada veri tabanını set ediyoruz
+*/
     }
 }
