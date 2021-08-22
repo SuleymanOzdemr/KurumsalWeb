@@ -1,9 +1,9 @@
-﻿@{ 
+﻿@*@{ 
     if(Session["adminid"] == null)
     {
         Response.Redirect("/Admin/Login");
     }
-}
+}*@
 <!DOCTYPE html>
 <html>
 <head>
@@ -344,10 +344,17 @@
                             <span>Site Kimlik</span>
                         </a>
                     </li>
+
                     <li>
                         <a class="" href="/Hakkimizda/Index/">
                             <i class="icon_book"></i>
                             <span>Hakkımızda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="/Slider/Index/">
+                            <i class="icon_book"></i>
+                            <span>Slider</span>
                         </a>
                     </li>
                     <li>

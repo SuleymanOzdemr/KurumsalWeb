@@ -71,19 +71,15 @@ namespace KurumsalWeb.Controllers
 
                 if (ResimURL != null)
                 {
-                    
-
-                    WebImage img = new WebImage(ResimURL.InputStream);
-                    FileInfo imgInfo = new FileInfo(ResimURL.FileName);
-
-                    string blogimgname = Guid.NewGuid().ToString() + imgInfo.Extension;
-                    img.Resize(600, 400);
                     if (System.IO.File.Exists(Server.MapPath(b.ResimURL)))
                     {
                         System.IO.File.Delete(Server.MapPath(b.ResimURL));
                     }
-                    img.Save("~/Uploads/Blog/" + blogimgname);
-                
+                    WebImage img = new WebImage(ResimURL.InputStream);
+                    FileInfo imgInfo = new FileInfo(ResimURL.FileName);
+                    string blogimgname = Guid.NewGuid().ToString() + imgInfo.Extension;
+                    img.Resize(600, 400);                    
+                    img.Save("~/Uploads/Blog/" + blogimgname);                
                     b.ResimURL = "/Uploads/Blog/" + blogimgname;
                 }
                 b.Baslik = blog.Baslik;
