@@ -20,11 +20,12 @@ namespace KurumsalWeb.Controllers
             var sorgu = db.Kategori.ToList();
             return View(sorgu);
         }
-        [Route("yonetimpaneli/giris")]
+        
         public ActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Login(Admin admin)
         {
@@ -33,10 +34,20 @@ namespace KurumsalWeb.Controllers
             {
                 Session["adminid"] = login.AdminId;
                 Session["eposta"] = login.Eposta;
+                Session["yetki"] = login.Yetki;
                 return RedirectToAction("Index", "Admin");
             }
-            ViewBag.Uyarı = "Kullanıcı adı ya da şifre hatalı";
+            ViewBag.Uyari = "Kullanıcı adı ya da şifre hatalı";
             return View(admin);
+        }
+
+
+        public ActionResult Logout()
+        {
+            Session["adminid"] = null;
+            Session["eposta"] = null;
+            Session.Abandon();
+            return RedirectToAction("Login", "Admin");
         }
     }
 }
