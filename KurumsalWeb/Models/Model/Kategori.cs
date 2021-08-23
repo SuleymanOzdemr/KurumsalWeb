@@ -12,7 +12,7 @@ namespace KurumsalWeb.Models.Model
     {
         [Key] // kategoriId key olarak belirlendi
         public int KategoriId { get; set; }
-        [Required,StringLength(50,ErrorMessage = "50 karakter olmalisir")]
+        [Required,StringLength(50,ErrorMessage = "50 karakter olmalidir")]
         public string KategoriAd { get; set; }
         public string Aciklama { get; set; }
         public ICollection<Blog> Blogs { get; set; }
