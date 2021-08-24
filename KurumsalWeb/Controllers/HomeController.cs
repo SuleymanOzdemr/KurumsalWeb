@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace KurumsalWeb.Controllers
@@ -35,6 +36,30 @@ namespace KurumsalWeb.Controllers
         public ActionResult Hizmetlerimiz()
         {
             return View(db.Hizmet.ToList().OrderByDescending(x => x.HizmetId));
+        }
+        public ActionResult Iletisim()
+        {
+            return View(db.Iletisim.ToList().OrderByDescending(x=>x.IletisimId));
+        }
+
+        [HttpPost]
+        public ActionResult Iletisim(string adsoyad=null,string email=null,string konu=null,string mesaj=null)
+        {
+            if (adsoyad!=null && email!=null && konu!=null && mesaj!=null)
+            {
+                WebMail.SmtpServer = "smtp.gmail.com";
+                WebMail.EnableSsl = true;
+                WebMail.UserName = "suleymanoz385@gmail.com";
+                WebMail.Password = "Mermer.123";
+                WebMail.SmtpPort = 587;
+                WebMail.Send("suleymanoz385@gmail.com", konu, email + "-" + mesaj);
+                ViewBag.Uyari = "Mesajınız başarıyla gonderildi";
+            }
+            else
+            {
+                ViewBag.Uyari = "Hata oluştu tekrar deneyiniz";
+            }
+            return View();
         }
     }
 }
