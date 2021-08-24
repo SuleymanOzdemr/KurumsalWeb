@@ -120,7 +120,7 @@
         <!-- Portfolio Projects -->
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="heading">Recent Works</h4>
+                <h4 class="heading">Hizmetler</h4>
                 <div class="row">
                     <section id="projects">
                         <ul id="thumbs" class="portfolio">
@@ -131,6 +131,7 @@
                                     <div class="item-thumbs">
                                         <!-- Fancybox - Gallery Enabled - Title - Full Image -->
                                         <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="@item.Baslik" href="@item.ResimURL">
+
 
                                             <span class="overlay-img"></span>
                                             <span class="overlay-img-thumb font-icon-plus"></span>
@@ -149,3 +150,91 @@
 
     </div>
 </section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Get in touch with us</h5>
+                    <address>
+                        <strong>Moderna company Inc</strong><br>
+                        Modernbuilding suite V124, AB 01<br>
+                        Someplace 16425 Earth
+                    </address>
+                    <p>
+                        <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
+                        <i class="icon-envelope-alt"></i> email@domainname.com
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Menü</h5>
+                    <ul class="link-list">
+                        <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                        <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                        <li><a href="/Home/Blog/">Blog</a></li>
+                        <li><a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
+                        <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Son yüklenen bloglar</h5>
+                    <ul class="link-list">
+                        @foreach (var item in ViewBag.Blog)
+                        {
+                            <li><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></li>
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Hizmetlerimiz</h5>
+                    <div class="flickr_badge">
+                        @foreach (var item in ViewBag.Hizmetler)
+                        {
+                            <img src="@item.ResimURL" width="75" height="30" />
+                        }
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <p> @DateTime.Now.Year &copy;  Tüm hakları saklıdır.</p>
+                        <div class="credits">
+                            <!--
+                              All the links in the footer should remain intact.
+                              You can delete the links only if you purchased the pro version.
+                              Licensing information: https://bootstrapmade.com/license/
+                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
+                            -->
+                            Designed by <a href="https://kurumsalweb.com/">Kurumsal Web</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="social-network">
+                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/s%C3%BCleyman-%C3%B6zdemir-838039174/" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

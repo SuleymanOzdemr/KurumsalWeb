@@ -1,0 +1,21 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Hakkimizda>
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<div class="container">
+    <div class="col-md-12">
+        <h4>Kurumsal Web Hakkında</h4>
+        <img src="~/Content/SiteLayout/img/dummies/dummy-1.jpg" alt="" class="align-center img-box img-responsive" />
+        <p>
+         @foreach (var item in Model)
+         {
+             @Html.Raw(item.Aciklama)
+         }
+        </p>
+
+    </div>
+</div>
+
+
+
