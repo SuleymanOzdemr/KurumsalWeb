@@ -1,4 +1,4 @@
-﻿@model KurumsalWeb.Models.Model.Blog 
+﻿@model KurumsalWeb.Models.Model.Blog
 @{
     ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
@@ -21,28 +21,47 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-               
-                    <article>
-                        <div class="post-image">
-                            <div class="post-heading">
-                                <h3>@Model.Baslik</h3>
-                            </div>
-                            <div class="bottom-article">
-                                <ul class="meta-post">
 
-                                    <li><i class="icon-folder-open"></i><a href="#"> @Model.Kategori.KategoriAd</a></li>
-                                    @*<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>*@
-                                </ul>
-
-                            </div>
-                            <img src="@Model.ResimURL" alt="@Model.Baslik" />
+                <article>
+                    <div class="post-image">
+                        <div class="post-heading">
+                            <h3>@Model.Baslik</h3>
                         </div>
-                        <p>
-                            @Html.Raw(Model.Icerik)
-                        </p>
-                        
-                    </article>
-                
+                        <div class="bottom-article">
+                            <ul class="meta-post">
+
+                                <li><i class="icon-folder-open"></i><a href="#"> @Model.Kategori.KategoriAd</a></li>
+                                @*<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>*@
+                            </ul>
+
+                        </div>
+                        <img src="@Model.ResimURL" alt="@Model.Baslik" />
+                    </div>
+                    <p>
+                        @Html.Raw(Model.Icerik)
+                    </p>
+
+                </article>
+
+                @*<div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3>Yorum Yap</h3>
+                            <form action="/Home/YorumYap" method="post">
+                                <div>
+                                    <input type="text" name="adsoyad" placeholder="Adınız ve Soyadınız" class="form-control" required />
+                                    <br />
+                                    <input type="email" name="eposta" class="form-control" placeholder="Mail Adresiniz" />
+                                    <br />
+                                    <textarea typeof="text" id="icerik" class="form-control" placeholder="bir seyler yaz..."></textarea>
+                                    <br />
+                                    <button type="submit" id="gonder" class="btn btn-success">Gonder</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>*@
+
             </div>
             <div class="col-lg-4">
                 <aside class="right-sidebar">
@@ -72,3 +91,25 @@
     </div>
 </section>
 
+@*<script src="~/Content/SiteLayout/js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#gonder").click(function () {
+            var adisoyadi = $("#adsoyad").val();
+            var epostasi = $("#eposta").val();
+            var yorumunuz = $("#icerik").val();
+            $.ajax({
+                url: '/Home/YorumYap/',
+                data: {adsoyad:adisoyadi,eposta: epostasi,icerik:yorumunuz,blogid:@Model.BlogId },
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    alert("Yorumunuz eklendi, kontrol edildikten sonra yayınlanacaktır.");
+                }
+            });
+        });
+    })
+
+</script>*@

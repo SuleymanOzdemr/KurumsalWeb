@@ -21,6 +21,7 @@ namespace KurumsalWeb.Models.DataContext
         public DbSet<Kategori> Kategori { get; set; }
         public DbSet<Kimlik> Kimlik { get; set; }        
         public DbSet<Slider> Slider { get; set; }
+        public DbSet<Yorum> Yorum { get; set; }
         /*
 burada veri tabanını set ediyoruz
 */
