@@ -1400,6 +1400,7 @@
     <Content Include="Content\SiteLayout\fonts\FontAwesome.otf" />
     <Content Include="Content\SiteLayout\WordPress-Version\Sample data\Moderna-widgets.wie" />
     <Content Include="Content\SiteLayout\WordPress-Version\Theme\moderna.zip" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.0.js" />
     <Content Include="Scripts\jquery-3.4.0.min.js" />
